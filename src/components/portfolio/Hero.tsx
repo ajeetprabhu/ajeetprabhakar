@@ -10,7 +10,7 @@ const container = {
 
 const word = {
   hidden: { y: "110%" },
-  show: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } },
+  show: { y: 0, transition: { duration: 1, ease: [0.16, 1, 0.3, 1] as const } },
 };
 
 const Hero = () => {
