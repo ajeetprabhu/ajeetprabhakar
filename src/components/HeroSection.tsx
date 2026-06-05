@@ -46,7 +46,9 @@ export const HeroSection = () => {
             {/* Resume Button & Philosophy Quote Side-by-Side (Left Aligned) */}
             <div className="pt-4 flex flex-col sm:flex-row items-start sm:items-center gap-6 w-full">
               <a 
-                href="#" 
+                href="/Ajeet prabhakar Resume.pdf" 
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-6 h-12 bg-white text-black font-display text-xs tracking-widest uppercase hover:bg-transparent hover:text-white border border-white transition-all duration-300 rounded-sm font-bold shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:shadow-[0_0_25px_rgba(255,255,255,0.25)] w-fit z-10"
               >
                 <FileText className="w-4 h-4" />
