@@ -1,80 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 40 30% 96%;
-    --foreground: 20 14% 8%;
+  :root, .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
 
-    --card: 40 30% 98%;
-    --card-foreground: 20 14% 8%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 40 30% 98%;
-    --popover-foreground: 20 14% 8%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 20 14% 8%;
-    --primary-foreground: 40 30% 96%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
 
-    --secondary: 35 20% 90%;
-    --secondary-foreground: 20 14% 8%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 35 20% 92%;
-    --muted-foreground: 20 8% 40%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 18 85% 55%;
-    --accent-foreground: 40 30% 98%;
+    --accent: 0 100% 45%;
+    --accent-foreground: 0 0% 100%;
 
-    --accent-warm: 35 75% 60%;
-    --accent-soft: 25 60% 88%;
+    --destructive: 0 100% 45%;
+    --destructive-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 40 30% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 0 100% 45%;
 
-    --border: 30 15% 85%;
-    --input: 30 15% 85%;
-    --ring: 18 85% 55%;
+    --radius: 0.15rem;
 
-    --radius: 1rem;
-
-    --gradient-hero: linear-gradient(135deg, hsl(18 85% 55%) 0%, hsl(35 75% 60%) 100%);
-    --gradient-soft: linear-gradient(180deg, hsl(40 30% 96%) 0%, hsl(35 20% 92%) 100%);
-    --gradient-dark: linear-gradient(135deg, hsl(20 14% 8%) 0%, hsl(20 20% 18%) 100%);
-
-    --shadow-soft: 0 4px 20px -4px hsl(20 14% 8% / 0.08);
-    --shadow-elegant: 0 20px 60px -20px hsl(20 14% 8% / 0.18);
-    --shadow-glow: 0 10px 40px -10px hsl(18 85% 55% / 0.4);
-
-    --transition-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 240 5.3% 26.1%;
-    --sidebar-primary: 240 5.9% 10%;
-    --sidebar-primary-foreground: 0 0% 98%;
-    --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
-  }
-
-  .dark {
-    --background: 20 14% 6%;
-    --foreground: 40 30% 96%;
-    --card: 20 14% 8%;
-    --card-foreground: 40 30% 96%;
-    --popover: 20 14% 8%;
-    --popover-foreground: 40 30% 96%;
-    --primary: 40 30% 96%;
-    --primary-foreground: 20 14% 8%;
-    --secondary: 20 10% 14%;
-    --secondary-foreground: 40 30% 96%;
-    --muted: 20 10% 14%;
-    --muted-foreground: 40 10% 65%;
-    --accent: 18 85% 55%;
-    --accent-foreground: 40 30% 96%;
-    --border: 20 10% 18%;
-    --input: 20 10% 18%;
-    --ring: 18 85% 55%;
+    --gradient-hero: linear-gradient(135deg, hsl(0 100% 45%) 0%, hsl(0 100% 30%) 100%);
+    --shadow-glow: 0 0 15px 0 hsl(0 100% 45% / 0.15);
+    --shadow-glow-strong: 0 0 30px 0 hsl(0 100% 45% / 0.30);
   }
 }
 
@@ -90,12 +54,12 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
-    font-feature-settings: "ss01", "cv11";
   }
 
-  h1, h2, h3, h4 {
-    font-family: 'Fraunces', Georgia, serif;
-    letter-spacing: -0.02em;
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Orbitron', system-ui, sans-serif;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
 }
 
@@ -111,32 +75,11 @@
     background: var(--gradient-hero);
   }
 
-  .bg-gradient-soft {
-    background: var(--gradient-soft);
-  }
-
-  .bg-gradient-dark {
-    background: var(--gradient-dark);
-  }
-
-  .shadow-soft {
-    box-shadow: var(--shadow-soft);
-  }
-
-  .shadow-elegant {
-    box-shadow: var(--shadow-elegant);
-  }
-
   .shadow-glow {
     box-shadow: var(--shadow-glow);
   }
 
-  .marquee {
-    animation: marquee 30s linear infinite;
+  .shadow-glow-strong {
+    box-shadow: var(--shadow-glow-strong);
   }
-}
-
-@keyframes marquee {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
 }
