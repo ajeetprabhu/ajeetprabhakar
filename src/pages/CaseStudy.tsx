@@ -3,6 +3,11 @@ import { ArrowLeft } from 'lucide-react';
 import dashLogoPdf from '../assets/Dash Logo.pdf';
 import dashBrandingImage from '../assets/Projects/Dash Logo Design and branding.jpg';
 import ddDashboardImage from '../assets/Projects/DD Dashboard.jpg';
+import cluixVideo from '../assets/Projects/3D animation/cluix_video.mp4';
+import droneChargingVideo from '../assets/Projects/3D animation/Drone Charging at PGCIL.mp4';
+import dashWirelessVideo from '../assets/Projects/3D animation/Dash Dynamic Wireless Charging system.mp4';
+import twoWheelerVideo from '../assets/Projects/3D animation/2 wheeler Charging Setup.mp4';
+import fourWheelerVideo from '../assets/Projects/3D animation/4 wheeler  wireless setup animation.mkv';
 
 const CaseStudy = () => {
   const { id } = useParams();
@@ -26,6 +31,51 @@ const CaseStudy = () => {
       tools: ['Illustrator', 'Photoshop'],
       pdfUrl: dashLogoPdf,
       imageUrl: dashBrandingImage,
+    },
+    '5': {
+      title: 'Cluix Product Animation',
+      subtitle: '3D Product Visualization & Animation',
+      description: 'A detailed 3D product animation detailing Cluix, showcasing product aesthetics, function, and design highlights with smooth motion graphics.',
+      role: '3D Animator',
+      timeline: '2 Weeks',
+      tools: ['Blender', 'After Effects'],
+      videoUrl: cluixVideo,
+    },
+    '6': {
+      title: 'Drone Charging at PGCIL',
+      subtitle: '3D Industrial Animation & Visualization',
+      description: 'An advanced 3D visualization illustrating drone automatic docking and charging systems at a PGCIL substation facility.',
+      role: '3D Animator & Visualizer',
+      timeline: '3 Weeks',
+      tools: ['Blender', 'Premiere Pro'],
+      videoUrl: droneChargingVideo,
+    },
+    '7': {
+      title: 'Dash Dynamic Wireless Charging',
+      subtitle: '3D Concept Animation',
+      description: 'An animated showcase showing the conceptual architecture of a dynamic wireless charging grid for modern electric vehicles.',
+      role: '3D Motion Designer',
+      timeline: '3 Weeks',
+      tools: ['Blender', 'After Effects'],
+      videoUrl: dashWirelessVideo,
+    },
+    '8': {
+      title: '2-Wheeler Charging Setup',
+      subtitle: '3D Mechanical & Assembly Animation',
+      description: 'A functional 3D animation showing the step-by-step mechanical setup and assembly of a next-generation 2-wheeler charging station.',
+      role: '3D Animator',
+      timeline: '2 Weeks',
+      tools: ['Blender', 'SolidWorks'],
+      videoUrl: twoWheelerVideo,
+    },
+    '9': {
+      title: '4-Wheeler Wireless Setup Animation',
+      subtitle: '3D Automotive & Technical Visualization',
+      description: 'A high-fidelity technical animation of the installation and operational flow for a 4-wheeler wireless charging setup.',
+      role: 'Lead 3D Artist',
+      timeline: '4 Weeks',
+      tools: ['Blender', 'Premiere Pro'],
+      videoUrl: fourWheelerVideo,
     },
     default: {
       title: 'Project ' + id,
@@ -52,6 +102,26 @@ const CaseStudy = () => {
             <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-4">{project.title}</h1>
             <p className="text-xl text-muted-foreground mb-8">{project.subtitle}</p>
             
+            {project.videoUrl && (
+              <div className="w-full aspect-[16/9] bg-card border border-border rounded-lg overflow-hidden mb-12 shadow-lg relative flex flex-col justify-end">
+                <video 
+                  src={project.videoUrl} 
+                  controls 
+                  autoPlay
+                  loop
+                  className="w-full h-full object-contain"
+                >
+                  Your browser does not support the video tag.
+                </video>
+                {project.videoUrl.endsWith('.mkv') && (
+                  <div className="absolute top-4 left-4 right-4 bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 p-3 rounded text-xs flex justify-between items-center backdrop-blur-md z-20">
+                    <span>Note: This video is in MKV format, which might not play natively in some browsers.</span>
+                    <a href={project.videoUrl} download className="underline font-bold hover:text-white ml-4 shrink-0">Download Video</a>
+                  </div>
+                )}
+              </div>
+            )}
+
             {project.imageUrl && (
               <div className="w-full rounded-lg overflow-hidden border border-border mb-12 bg-card shadow-lg">
                 <img 
@@ -71,7 +141,7 @@ const CaseStudy = () => {
                   className="w-full h-full border-0"
                 />
               </div>
-            ) : (!project.imageUrl && (
+            ) : (!project.imageUrl && !project.videoUrl && (
               <div className="aspect-[16/9] bg-card border border-border rounded-lg flex items-center justify-center mb-12 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-hero opacity-10 group-hover:opacity-20 transition-opacity" />
                 <div className="p-8 text-center text-muted-foreground font-display tracking-widest">
