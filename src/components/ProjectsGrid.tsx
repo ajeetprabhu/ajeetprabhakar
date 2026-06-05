@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import dashBrandingImage from '../assets/Projects/Dash Logo Design and branding.jpg';
+import ddDashboardImage from '../assets/Projects/DD Dashboard.jpg';
 
 const CATEGORIES = [
   'All',
@@ -17,7 +18,14 @@ export const ProjectsGrid = () => {
   const [activeCategory, setActiveCategory] = useState('All');
 
   const projects = [
-    { id: 1, title: 'Model X Interface', category: 'UI&UX', colSpan: 'lg:col-span-8', rowSpan: 'lg:row-span-2' },
+    { 
+      id: 1, 
+      title: 'DD Dashboard', 
+      category: 'UI&UX', 
+      colSpan: 'lg:col-span-8', 
+      rowSpan: 'lg:row-span-2',
+      image: ddDashboardImage
+    },
     { id: 2, title: 'Supercharger Hub UX', category: 'Product Design and Development', colSpan: 'lg:col-span-4', rowSpan: 'lg:row-span-1' },
     { id: 3, title: 'Telemetry Dashboard', category: 'Motion Graphics', colSpan: 'lg:col-span-4', rowSpan: 'lg:row-span-1' },
     { 

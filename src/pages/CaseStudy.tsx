@@ -2,11 +2,21 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import dashLogoPdf from '../assets/Dash Logo.pdf';
 import dashBrandingImage from '../assets/Projects/Dash Logo Design and branding.jpg';
+import ddDashboardImage from '../assets/Projects/DD Dashboard.jpg';
 
 const CaseStudy = () => {
   const { id } = useParams();
 
   const projectsData: Record<string, any> = {
+    '1': {
+      title: 'DD Dashboard',
+      subtitle: 'Business Intelligence & Data Visualization',
+      description: 'A comprehensive user interface and user experience design for a dynamic dashboard system, showcasing advanced data visualizations, interactive widgets, and modern dark mode styling.',
+      role: 'Lead UI/UX Designer',
+      timeline: '6 Weeks',
+      tools: ['Figma', 'Photoshop', 'Illustrator'],
+      imageUrl: ddDashboardImage,
+    },
     '4': {
       title: 'Dash Dynamic Logo Design and Branding',
       subtitle: 'Dynamic Identity System',
