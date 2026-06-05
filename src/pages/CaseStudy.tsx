@@ -1,6 +1,7 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import dashLogoPdf from '../assets/Dash Logo.pdf';
+import dashBrandingImage from '../assets/Projects/Dash Logo Design and branding.jpg';
 
 const CaseStudy = () => {
   const { id } = useParams();
@@ -14,6 +15,7 @@ const CaseStudy = () => {
       timeline: '4 Weeks',
       tools: ['Illustrator', 'Photoshop'],
       pdfUrl: dashLogoPdf,
+      imageUrl: dashBrandingImage,
     },
     default: {
       title: 'Project ' + id,
@@ -40,22 +42,33 @@ const CaseStudy = () => {
             <h1 className="text-4xl md:text-6xl font-display font-bold text-foreground mb-4">{project.title}</h1>
             <p className="text-xl text-muted-foreground mb-8">{project.subtitle}</p>
             
+            {project.imageUrl && (
+              <div className="w-full rounded-lg overflow-hidden border border-border mb-12 bg-card shadow-lg">
+                <img 
+                  src={project.imageUrl} 
+                  alt={project.title} 
+                  className="w-full h-auto object-contain"
+                  loading="lazy"
+                />
+              </div>
+            )}
+
             {project.pdfUrl ? (
-              <div className="w-full aspect-[4/3] bg-card border border-border rounded-lg overflow-hidden mb-12">
+              <div className="w-full aspect-[4/3] bg-card border border-border rounded-lg overflow-hidden mb-12 shadow-lg">
                 <iframe 
                   src={project.pdfUrl} 
                   title="Project PDF"
                   className="w-full h-full border-0"
                 />
               </div>
-            ) : (
+            ) : (!project.imageUrl && (
               <div className="aspect-[16/9] bg-card border border-border rounded-lg flex items-center justify-center mb-12 relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-hero opacity-10 group-hover:opacity-20 transition-opacity" />
                 <div className="p-8 text-center text-muted-foreground font-display tracking-widest">
                   [ VISUALIZATION RENDER PLACEHOLDER ]
                 </div>
               </div>
-            )}
+            ))}
 
             <div className="prose prose-slate max-w-none">
               <h2 className="text-2xl font-display text-foreground mb-4 mt-8">Overview</h2>

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
+import dashBrandingImage from '../assets/Projects/Dash Logo Design and branding.jpg';
 
 const CATEGORIES = [
   'All',
@@ -19,7 +20,14 @@ export const ProjectsGrid = () => {
     { id: 1, title: 'Model X Interface', category: 'UI&UX', colSpan: 'lg:col-span-8', rowSpan: 'lg:row-span-2' },
     { id: 2, title: 'Supercharger Hub UX', category: 'Product Design and Development', colSpan: 'lg:col-span-4', rowSpan: 'lg:row-span-1' },
     { id: 3, title: 'Telemetry Dashboard', category: 'Motion Graphics', colSpan: 'lg:col-span-4', rowSpan: 'lg:row-span-1' },
-    { id: 4, title: 'Dash Dynamic Logo Design and Branding', category: 'Branding', colSpan: 'lg:col-span-8', rowSpan: 'lg:row-span-1' },
+    { 
+      id: 4, 
+      title: 'Dash Dynamic Logo Design and Branding', 
+      category: 'Branding', 
+      colSpan: 'lg:col-span-8', 
+      rowSpan: 'lg:row-span-1',
+      image: dashBrandingImage
+    },
   ];
 
   const filteredProjects = activeCategory === 'All' 
@@ -57,13 +65,23 @@ export const ProjectsGrid = () => {
             <Link 
               key={project.id} 
               to={`/case-study/${project.id}`}
-              className={`group relative overflow-hidden bg-white border border-border rounded-sm p-8 flex flex-col justify-end transition-all duration-500 hover:border-accent hover:shadow-glow ${project.colSpan} ${project.rowSpan}`}
+              className={`group relative overflow-hidden bg-card border border-border rounded-sm p-8 flex flex-col justify-end transition-all duration-500 hover:border-accent hover:shadow-glow ${project.colSpan} ${project.rowSpan}`}
             >
               {/* Solid subtle background instead of dark gradients */}
-              <div className="absolute inset-0 bg-muted/30 group-hover:bg-accent/5 transition-colors duration-500 z-10" />
+              <div className="absolute inset-0 bg-muted/10 group-hover:bg-accent/5 transition-colors duration-500 z-10" />
               
-              {/* Image Placeholder */}
-              <div className="absolute inset-x-8 top-8 bottom-32 bg-muted border border-border/50 group-hover:scale-[1.02] transition-transform duration-700 ease-out" />
+              {/* Image or Image Placeholder */}
+              <div className="absolute inset-x-8 top-8 bottom-32 bg-muted/20 border border-border/30 group-hover:scale-[1.02] transition-transform duration-700 ease-out overflow-hidden flex items-center justify-center rounded-sm">
+                {project.image ? (
+                  <img 
+                    src={project.image} 
+                    alt={project.title} 
+                    className="w-full h-full object-cover object-top filter brightness-[0.8] group-hover:brightness-100 transition-all duration-500"
+                  />
+                ) : (
+                  <div className="text-muted-foreground/50 font-display tracking-widest text-xs uppercase">[ {project.title} ]</div>
+                )}
+              </div>
 
               <div className="relative z-20 w-full flex justify-between items-end">
                 <div>
