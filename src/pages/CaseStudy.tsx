@@ -109,6 +109,8 @@ const CaseStudy = () => {
                   controls 
                   autoPlay
                   loop
+                  muted
+                  playsInline
                   className="w-full h-full object-contain"
                 >
                   Your browser does not support the video tag.

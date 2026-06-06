@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import dashBrandingImage from '../assets/Projects/Dash Logo Design and branding.jpg';
@@ -31,26 +31,9 @@ interface Project {
 }
 
 const ProjectCard = ({ project }: { project: Project }) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  const handleMouseEnter = () => {
-    if (videoRef.current) {
-      videoRef.current.play().catch(() => {});
-    }
-  };
-
-  const handleMouseLeave = () => {
-    if (videoRef.current) {
-      videoRef.current.pause();
-      videoRef.current.currentTime = 0;
-    }
-  };
-
   return (
     <Link 
       to={`/case-study/${project.id}`}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
       className={`group relative overflow-hidden bg-card border border-border rounded-sm p-8 flex flex-col justify-end transition-all duration-500 hover:border-accent hover:shadow-glow ${project.colSpan} ${project.rowSpan}`}
     >
       {/* Solid subtle background */}
@@ -60,12 +43,12 @@ const ProjectCard = ({ project }: { project: Project }) => {
       <div className="absolute inset-x-8 top-8 bottom-32 bg-muted/20 border border-border/30 group-hover:scale-[1.02] transition-transform duration-700 ease-out overflow-hidden flex items-center justify-center rounded-sm">
         {project.video ? (
           <video 
-            ref={videoRef}
             src={project.video} 
             muted 
             loop 
+            autoPlay
             playsInline
-            className="w-full h-full object-cover object-center filter brightness-[0.85] group-hover:brightness-100 transition-all duration-500"
+            className="w-full h-full object-cover object-center filter brightness-[0.75] group-hover:brightness-100 transition-all duration-500"
           />
         ) : project.image ? (
           <img 
