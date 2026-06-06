@@ -1,20 +1,4 @@
-import figmaIcon from "../assets/Design tools/Figma-logo.svg.png";
-import aiIcon from "../assets/Design tools/Adobe_Illustrator_CC_icon.svg.png";
-import psIcon from "../assets/Design tools/Adobe_Photoshop_CC_icon.svg.png";
-import idIcon from "../assets/Design tools/Adobe_InDesign_CC_icon.svg.png";
-import xdIcon from "../assets/Design tools/Adobe_XD_CC_icon.svg.png";
-import prIcon from "../assets/Design tools/Adobe_Premiere_Pro_CC_icon.svg.png";
-import aeIcon from "../assets/Design tools/Adobe_After_Effects_CC_icon.svg.png";
-import wixIcon from "../assets/Design tools/unnamed.png";
-import sbIcon from "../assets/Design tools/sb_icon.webp";
-import procreateIcon from "../assets/Design tools/Procreate_icon.png";
-import canvaIcon from "../assets/Design tools/Canva_logo.svg.png";
-import blenderIcon from "../assets/Design tools/Blender_logo_no_text.svg.png";
-import keyshotIcon from "../assets/Design tools/images.png";
-import solidworksIcon from "../assets/Design tools/SolidWorks_Logo.svg.png";
-import googleAntigravityIcon from "../assets/Design tools/Google_Antigravity_Logo.svg.png";
-import claudeIcon from "../assets/Design tools/Claude_AI_symbol.svg.png";
-import lovableIcon from "../assets/Design tools/Lovable_Logo_+_Wordmark_Black.png";
+import toolsImage from "../assets/Tools.png";
 
 export const SkillsDashboard = () => {
   const column1 = [
@@ -41,99 +25,13 @@ export const SkillsDashboard = () => {
       
       <div className="container mx-auto px-6 max-w-6xl relative z-10">
         
-        {/* Tools Section Row */}
-        <div className="flex flex-col lg:flex-row items-center gap-8 mb-24 relative z-10 w-full justify-start py-6">
-          
-          <div className="flex items-center shrink-0 w-full lg:w-fit justify-between lg:justify-start">
-            <h3 
-              className="text-4xl md:text-5xl font-display font-black tracking-normal text-white select-none pb-4"
-              style={{ 
-                WebkitBoxReflect: "below -16px linear-gradient(transparent 30%, rgba(255, 255, 255, 0.15))" 
-              }}
-            >
-              Tools
-            </h3>
-            <div className="h-20 w-[3px] bg-gradient-to-b from-white via-white to-white/10 rounded-full shadow-[0_0_12px_rgba(255,255,255,0.4)] ml-12 hidden lg:block" />
-          </div>
-          
-          {/* Tool Icons Grid (Two Clean Rows) */}
-          <div className="flex flex-col gap-4.5 w-full items-center lg:items-start overflow-hidden py-1 lg:ml-6">
-            {/* Row 1 */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl p-2.5 transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={figmaIcon} alt="Figma" className="h-full w-auto object-contain" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Figma</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl p-1 transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={aiIcon} alt="Adobe Illustrator" className="h-full w-auto object-contain rounded-lg" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Illustrator</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl p-1 transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={psIcon} alt="Adobe Photoshop" className="h-full w-auto object-contain rounded-lg" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Photoshop</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl p-1 transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={idIcon} alt="Adobe InDesign" className="h-full w-auto object-contain rounded-lg" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">InDesign</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl p-1 transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={xdIcon} alt="Adobe XD" className="h-full w-auto object-contain rounded-lg" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Adobe XD</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl p-1 transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={prIcon} alt="Adobe Premiere Pro" className="h-full w-auto object-contain rounded-lg" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Premiere</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl p-1 transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={aeIcon} alt="Adobe After Effects" className="h-full w-auto object-contain rounded-lg" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">After Effects</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl overflow-hidden transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={wixIcon} alt="Wix Studio" className="h-full w-full object-cover" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Wix Studio</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl overflow-hidden transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={sbIcon} alt="Sketchbook" className="h-full w-full object-cover" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Sketchbook</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl overflow-hidden transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={procreateIcon} alt="Procreate" className="h-full w-full object-cover" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Procreate</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 px-5 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl transition-all duration-300 hover:scale-105 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={canvaIcon} alt="Canva" className="h-6 w-auto object-contain" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Canva</span>
-              </div>
-            </div>
-            
-            {/* Row 2 */}
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-4">
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl p-2 transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={blenderIcon} alt="Blender" className="h-[80%] w-auto object-contain" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Blender</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl overflow-hidden transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={keyshotIcon} alt="Fusion 360" className="h-full w-full object-cover" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Fusion 360</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 px-5 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl transition-all duration-300 hover:scale-105 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={solidworksIcon} alt="SolidWorks" className="h-6 w-auto object-contain" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">SolidWorks</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 px-5 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl transition-all duration-300 hover:scale-105 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={googleAntigravityIcon} alt="Google Antigravity" className="h-6 w-auto object-contain [filter:invert(1)_hue-rotate(180deg)_brightness(1.4)]" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Google Antigravity</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 w-12 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl p-2.5 transition-all duration-300 hover:scale-110 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={claudeIcon} alt="Claude AI" className="h-full w-auto object-contain" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Claude AI</span>
-              </div>
-              <div className="group relative flex items-center justify-center h-12 px-5 bg-[#151518] border border-white/[0.08] hover:border-white/20 rounded-xl transition-all duration-300 hover:scale-105 hover:bg-[#1c1c20] hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]">
-                <img src={lovableIcon} alt="Lovable" className="h-[18px] w-auto object-contain [filter:invert(1)_hue-rotate(180deg)_brightness(1.4)]" />
-                <span className="absolute -bottom-6 text-[9px] uppercase tracking-wider text-gray-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap bg-black/80 px-1.5 py-0.5 rounded border border-white/5 z-20">Lovable</span>
-              </div>
-            </div>
-          </div>
+        {/* Tools Section Image */}
+        <div className="flex justify-center items-center mb-24 relative z-10 w-full py-6">
+          <img 
+            src={toolsImage} 
+            alt="Design Tools" 
+            className="w-full max-w-4xl h-auto object-contain select-none"
+          />
         </div>
 
         {/* Capabilities Section */}
