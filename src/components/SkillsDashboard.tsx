@@ -18,7 +18,7 @@ export const SkillsDashboard = () => {
   ];
 
   return (
-    <section id="skills" className="py-24 bg-background border-y border-white/10 relative overflow-hidden">
+    <section id="skills" className="py-24 bg-[#030712] border-y border-white/10 relative overflow-hidden">
       {/* Decorative glows */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-cyan-500/5 blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-1/3 h-full bg-indigo-500/5 blur-[120px] pointer-events-none" />
@@ -53,7 +53,7 @@ export const SkillsDashboard = () => {
                   <div className="h-3 w-full bg-white/10 rounded-full relative overflow-visible">
                     {/* Fill track */}
                     <div 
-                      className="h-full bg-green-500 rounded-full relative overflow-visible transition-all duration-1000"
+                      className="h-full bg-gradient-to-r from-[#22D3EE] to-[#6366F1] rounded-full relative overflow-visible transition-all duration-1000"
                       style={{ width: `${skill.level * 10}%` }}
                     >
                       {/* Round White Slider Handle */}
@@ -76,7 +76,7 @@ export const SkillsDashboard = () => {
                   <div className="h-3 w-full bg-white/10 rounded-full relative overflow-visible">
                     {/* Fill track */}
                     <div 
-                      className="h-full bg-green-500 rounded-full relative overflow-visible transition-all duration-1000"
+                      className="h-full bg-gradient-to-r from-[#22D3EE] to-[#6366F1] rounded-full relative overflow-visible transition-all duration-1000"
                       style={{ width: `${skill.level * 10}%` }}
                     >
                       {/* Round White Slider Handle */}
