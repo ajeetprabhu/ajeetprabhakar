@@ -16,7 +16,8 @@ import {
   Send, 
   Linkedin, 
   Github, 
-  Dribbble 
+  Dribbble,
+  Instagram
 } from 'lucide-react';
 
 export const ContactSection = () => {
@@ -161,6 +162,14 @@ export const ContactSection = () => {
                   <Linkedin className="w-4 h-4" />
                 </a>
                 <a 
+                  href="https://www.instagram.com/st.upid.design?igsh=MTA2d25mNDNwbGc3cA==" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 rounded-md bg-white/[0.02] border border-white/5 hover:border-accent hover:bg-accent/5 text-neutral-400 hover:text-white hover:shadow-glow transition-all duration-300 flex items-center justify-center"
+                >
+                  <Instagram className="w-4 h-4" />
+                </a>
+                <a 
                   href="https://dribbble.com/AjeetPrabhu" 
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -240,6 +249,10 @@ export const ContactSection = () => {
                     <option value="" disabled className="text-neutral-500">Project Type</option>
                     <option value="UI/UX Design">UI/UX Design</option>
                     <option value="Branding & Identity">Branding & Identity</option>
+                    <option value="Product ideation">Product ideation</option>
+                    <option value="3D Modeling">3D Modeling</option>
+                    <option value="3D Printing">3D Printing</option>
+                    <option value="Product Prototyping">Product Prototyping</option>
                     <option value="3D Modeling & Animation">3D Modeling & Animation</option>
                     <option value="Motion Graphics">Motion Graphics</option>
                     <option value="Product Visualization">Product Visualization</option>
@@ -349,6 +362,7 @@ export const ContactSection = () => {
           <p>© {new Date().getFullYear()} AJEET PRABHAKAR</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <a href="https://www.linkedin.com/in/ajeet-prabhakar-79a4841b1/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">LINKEDIN</a>
+            <a href="https://www.instagram.com/st.upid.design?igsh=MTA2d25mNDNwbGc3cA==" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">INSTAGRAM</a>
             <a href="https://www.behance.net/CreatorDesigno" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">BEHANCE</a>
             <a href="https://dribbble.com/AjeetPrabhu" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">DRIBBBLE</a>
           </div>
