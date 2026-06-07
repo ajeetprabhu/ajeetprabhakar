@@ -79,8 +79,8 @@ export const ContactSection = () => {
                 </div>
                 <div className="space-y-0.5">
                   <h4 className="text-white font-display text-xs font-bold uppercase tracking-wider">Email</h4>
-                  <a href="mailto:ajeetprabhakar04@gmail.com" className="text-neutral-400 text-xs hover:text-white transition-colors break-all">
-                    ajeetprabhakar04@gmail.com
+                  <a href="mailto:ajeetprabhakar88@gmail.com" className="text-neutral-400 text-xs hover:text-white transition-colors break-all">
+                    ajeetprabhakar88@gmail.com
                   </a>
                   <p className="text-[10px] text-neutral-500 font-sans">I usually reply within 24 hours</p>
                 </div>
@@ -93,8 +93,8 @@ export const ContactSection = () => {
                 </div>
                 <div className="space-y-0.5">
                   <h4 className="text-white font-display text-xs font-bold uppercase tracking-wider">Phone</h4>
-                  <a href="tel:+918779141922" className="text-neutral-400 text-xs hover:text-white transition-colors">
-                    +91 8779141922
+                  <a href="tel:+918417979964" className="text-neutral-400 text-xs hover:text-white transition-colors">
+                    +91 84179 79964
                   </a>
                   <p className="text-[10px] text-neutral-500 font-sans">Mon – Sat, 10AM – 7PM</p>
                 </div>
@@ -107,7 +107,7 @@ export const ContactSection = () => {
                 </div>
                 <div className="space-y-0.5">
                   <h4 className="text-white font-display text-xs font-bold uppercase tracking-wider">Location</h4>
-                  <p className="text-neutral-400 text-xs">Bengaluru, Karnataka, India</p>
+                  <p className="text-neutral-400 text-xs">New Delhi, India</p>
                   <p className="text-[10px] text-neutral-500 font-sans">Open to remote work</p>
                 </div>
               </div>
