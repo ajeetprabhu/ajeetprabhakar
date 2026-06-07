@@ -3,6 +3,9 @@ import { ArrowLeft } from 'lucide-react';
 import dashLogoPdf from '../assets/Dash Logo.pdf';
 import dashBrandingImage from '../assets/Projects/Dash Logo Design and branding.jpg';
 import ddDashboardImage from '../assets/Projects/DD Dashboard.jpg';
+import cuixBrandingImage from '../assets/Projects/Cuix Branding.jpg';
+import superchargerImage from '../assets/Projects/3D Renders/DYNAMIC CHARGER.png';
+import telemetryImage from '../assets/Projects/3D Renders/computer.png';
 import cluixVideo from '../assets/Projects/3D animation/cluix_video.mp4';
 import droneChargingVideo from '../assets/Projects/3D animation/Drone Charging at PGCIL.mp4';
 import dashWirelessVideo from '../assets/Projects/3D animation/Dash Dynamic Wireless Charging system.mp4';
@@ -22,9 +25,27 @@ const CaseStudy = () => {
       tools: ['Figma', 'Photoshop', 'Illustrator'],
       imageUrl: ddDashboardImage,
     },
+    '2': {
+      title: 'Supercharger Hub UX',
+      subtitle: 'Next-Gen EV Charging Experience',
+      description: 'A futuristic user experience concept for next-generation electric vehicle supercharger hubs. Streamlining payment systems, queue tracking, and real-time charging telemetry on touch interfaces.',
+      role: 'Lead UI/UX Designer',
+      timeline: '8 Weeks',
+      tools: ['Figma', 'Protopie', 'Illustrator'],
+      imageUrl: superchargerImage,
+    },
+    '3': {
+      title: 'Telemetry Dashboard',
+      subtitle: 'Real-time Vehicle Diagnostics & Stats',
+      description: 'An interactive telemetry dashboard showing vehicle speed, heat diagnostics, battery consumption, and route metrics in a high-tech dark theme with custom motion graphics.',
+      role: 'Motion Graphic & UI Designer',
+      timeline: '5 Weeks',
+      tools: ['After Effects', 'Figma', 'Blender'],
+      imageUrl: telemetryImage,
+    },
     '4': {
-      title: 'Dash Dynamic Logo Design and Branding',
-      subtitle: 'Dynamic Identity System',
+      title: 'Dash Dynamic Branding',
+      subtitle: 'Responsive Brand Identity System',
       description: 'A comprehensive branding project for Dash, exploring dynamic logo systems and visual identity. The logo is designed to be versatile, scalable, and responsive.',
       role: 'Brand Designer',
       timeline: '4 Weeks',
@@ -76,6 +97,15 @@ const CaseStudy = () => {
       timeline: '4 Weeks',
       tools: ['Blender', 'Premiere Pro'],
       videoUrl: fourWheelerVideo,
+    },
+    '10': {
+      title: 'Cluix Brand Identity & Design',
+      subtitle: 'Water Intelligence & Branding System',
+      description: 'A comprehensive branding system designed for Cluix, focusing on water intelligence, clean aesthetics, and visual identity consistency across digital products, stationery, and hardware packages.',
+      role: 'Brand Designer',
+      timeline: '4 Weeks',
+      tools: ['Illustrator', 'Photoshop', 'Indesign'],
+      imageUrl: cuixBrandingImage,
     },
     default: {
       title: 'Project ' + id,

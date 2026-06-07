@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom';
 import { ArrowUpRight } from 'lucide-react';
 import dashBrandingImage from '../assets/Projects/Dash Logo Design and branding.jpg';
 import ddDashboardImage from '../assets/Projects/DD Dashboard.jpg';
+import cuixBrandingImage from '../assets/Projects/Cuix Branding.jpg';
+import superchargerImage from '../assets/Projects/3D Renders/DYNAMIC CHARGER.png';
+import telemetryImage from '../assets/Projects/3D Renders/computer.png';
 import cluixVideo from '../assets/Projects/3D animation/cluix_video.mp4';
 import droneChargingVideo from '../assets/Projects/3D animation/Drone Charging at PGCIL.mp4';
 import dashWirelessVideo from '../assets/Projects/3D animation/Dash Dynamic Wireless Charging system.mp4';
@@ -13,16 +16,15 @@ const CATEGORIES = [
   'All',
   'Branding',
   'UI&UX',
-  '3D Design',
-  'Motion Graphics',
   '3D Animation',
-  'Product Visualization',
-  'Product Design and Development'
+  'Motion Graphics',
+  'Product Design'
 ];
 
 interface Project {
   id: number;
   title: string;
+  subtitle?: string;
   category: string;
   colSpan: string;
   rowSpan: string;
@@ -31,42 +33,66 @@ interface Project {
 }
 
 const ProjectCard = ({ project }: { project: Project }) => {
+  const isVideo = !!project.video;
+  const isImage = !!project.image;
+
   return (
     <Link 
       to={`/case-study/${project.id}`}
-      className={`group relative overflow-hidden bg-card border border-border rounded-sm p-8 flex flex-col justify-end transition-all duration-500 hover:border-accent hover:shadow-glow ${project.colSpan} ${project.rowSpan}`}
+      className={`group relative overflow-hidden bg-[#0a0a0c] border border-white/5 rounded-sm p-6 sm:p-8 flex flex-col justify-end transition-all duration-500 hover:border-accent/50 hover:shadow-glow ${project.colSpan} ${project.rowSpan}`}
     >
-      {/* Solid subtle background */}
-      <div className="absolute inset-0 bg-muted/10 group-hover:bg-accent/5 transition-colors duration-500 z-10" />
-      
-      {/* Image or Video Preview */}
-      <div className="absolute inset-x-8 top-8 bottom-32 bg-muted/20 border border-border/30 group-hover:scale-[1.02] transition-transform duration-700 ease-out overflow-hidden flex items-center justify-center rounded-sm">
-        {project.video ? (
+      {/* Background Media */}
+      {isVideo ? (
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
           <video 
             src={project.video} 
             muted 
             loop 
             autoPlay
             playsInline
-            className="w-full h-full object-cover object-center filter brightness-[0.75] group-hover:brightness-100 transition-all duration-500"
+            className="w-full h-full object-cover object-center scale-100 group-hover:scale-[1.03] filter brightness-[0.55] group-hover:brightness-[0.75] transition-all duration-700 ease-out"
           />
-        ) : project.image ? (
+        </div>
+      ) : isImage ? (
+        <div className="absolute inset-0 w-full h-full overflow-hidden">
           <img 
             src={project.image} 
             alt={project.title} 
-            className="w-full h-full object-cover object-top filter brightness-[0.8] group-hover:brightness-100 transition-all duration-500"
+            className="w-full h-full object-cover object-top scale-100 group-hover:scale-[1.03] filter brightness-[0.55] group-hover:brightness-[0.75] transition-all duration-700 ease-out"
           />
-        ) : (
-          <div className="text-muted-foreground/50 font-display tracking-widest text-xs uppercase">[ {project.title} ]</div>
-        )}
-      </div>
-
-      <div className="relative z-20 w-full flex justify-between items-end">
-        <div>
-          <p className="text-accent font-display tracking-widest text-xs mb-2 uppercase">{project.category}</p>
-          <h3 className="text-xl sm:text-2xl font-display font-bold text-foreground group-hover:text-accent transition-colors line-clamp-1">{project.title}</h3>
         </div>
-        <div className="bg-foreground text-background p-3 rounded-full group-hover:bg-accent transition-colors flex shrink-0 ml-4">
+      ) : (
+        /* Fallback graphic/gradient layout */
+        <div className="absolute inset-0 w-full h-full bg-[#0d0d11]">
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:24px_24px]" />
+          <div className="absolute -top-12 -right-12 w-32 h-32 bg-accent/[0.03] group-hover:bg-accent/[0.08] rounded-full blur-2xl transition-colors duration-500" />
+        </div>
+      )}
+
+      {/* Sleek Dark Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black via-black/45 to-transparent z-10 opacity-90 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      {/* Hover Cyan Wash Effect */}
+      <div className="absolute inset-0 bg-cyan-950/0 group-hover:bg-cyan-950/[0.08] transition-colors duration-500 z-10" />
+
+      {/* Card Content */}
+      <div className="relative z-20 w-full flex justify-between items-end">
+        <div className="space-y-1.5 max-w-[85%]">
+          <span className="inline-block text-accent font-display tracking-widest text-[9px] uppercase font-bold px-2.5 py-0.5 bg-accent/10 border border-accent/20 rounded-full backdrop-blur-sm shadow-[0_0_8px_rgba(6,182,212,0.1)] group-hover:border-accent/40 group-hover:shadow-[0_0_12px_rgba(6,182,212,0.2)] transition-all duration-300">
+            {project.category}
+          </span>
+          <h3 className="text-xl sm:text-2xl font-display font-bold text-white group-hover:text-accent transition-colors duration-300 line-clamp-1">
+            {project.title}
+          </h3>
+          {project.subtitle && (
+            <p className="text-xs text-neutral-400 group-hover:text-neutral-300 transition-colors duration-300 line-clamp-1 font-sans">
+              {project.subtitle}
+            </p>
+          )}
+        </div>
+
+        {/* Dynamic Action Button */}
+        <div className="bg-white/5 text-white p-3 rounded-full border border-white/10 group-hover:bg-accent group-hover:border-accent group-hover:text-background group-hover:shadow-[0_0_15px_rgba(6,182,212,0.4)] group-hover:scale-110 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-300 flex shrink-0 ml-4">
           <ArrowUpRight className="w-5 h-5" />
         </div>
       </div>
@@ -81,16 +107,34 @@ export const ProjectsGrid = () => {
     { 
       id: 1, 
       title: 'DD Dashboard', 
+      subtitle: 'Business Intelligence & Data Visualization',
       category: 'UI&UX', 
       colSpan: 'lg:col-span-8', 
       rowSpan: 'lg:row-span-2',
       image: ddDashboardImage
     },
-    { id: 2, title: 'Supercharger Hub UX', category: 'Product Design and Development', colSpan: 'lg:col-span-4', rowSpan: 'lg:row-span-1' },
-    { id: 3, title: 'Telemetry Dashboard', category: 'Motion Graphics', colSpan: 'lg:col-span-4', rowSpan: 'lg:row-span-1' },
+    { 
+      id: 2, 
+      title: 'Supercharger Hub UX', 
+      subtitle: 'Next-Gen EV Charging Experience',
+      category: 'Product Design', 
+      colSpan: 'lg:col-span-4', 
+      rowSpan: 'lg:row-span-1',
+      image: superchargerImage
+    },
+    { 
+      id: 3, 
+      title: 'Telemetry Dashboard', 
+      subtitle: 'Real-time Vehicle Diagnostics & Stats',
+      category: 'Motion Graphics', 
+      colSpan: 'lg:col-span-4', 
+      rowSpan: 'lg:row-span-1',
+      image: telemetryImage
+    },
     { 
       id: 4, 
-      title: 'Dash Dynamic Logo Design and Branding', 
+      title: 'Dash Dynamic Branding', 
+      subtitle: 'Responsive Brand Identity System',
       category: 'Branding', 
       colSpan: 'lg:col-span-8', 
       rowSpan: 'lg:row-span-1',
@@ -99,6 +143,7 @@ export const ProjectsGrid = () => {
     { 
       id: 5, 
       title: 'Cluix Product Animation', 
+      subtitle: 'High-fidelity 3D Product Showcase',
       category: '3D Animation', 
       colSpan: 'lg:col-span-4', 
       rowSpan: 'lg:row-span-1',
@@ -107,6 +152,7 @@ export const ProjectsGrid = () => {
     { 
       id: 6, 
       title: 'Drone Charging at PGCIL', 
+      subtitle: 'Automatic Substation Charging Dock',
       category: '3D Animation', 
       colSpan: 'lg:col-span-6', 
       rowSpan: 'lg:row-span-1',
@@ -115,6 +161,7 @@ export const ProjectsGrid = () => {
     { 
       id: 7, 
       title: 'Dash Dynamic Wireless Charging', 
+      subtitle: 'Conceptual EV Grid Infrastructure',
       category: '3D Animation', 
       colSpan: 'lg:col-span-6', 
       rowSpan: 'lg:row-span-1',
@@ -123,6 +170,7 @@ export const ProjectsGrid = () => {
     { 
       id: 8, 
       title: '2-Wheeler Charging Setup', 
+      subtitle: 'Mechanical Station Assembly',
       category: '3D Animation', 
       colSpan: 'lg:col-span-4', 
       rowSpan: 'lg:row-span-1',
@@ -131,10 +179,20 @@ export const ProjectsGrid = () => {
     { 
       id: 9, 
       title: '4-Wheeler Wireless Setup Animation', 
+      subtitle: 'Technical Operational Flow',
       category: '3D Animation', 
       colSpan: 'lg:col-span-8', 
       rowSpan: 'lg:row-span-1',
       video: fourWheelerVideo 
+    },
+    { 
+      id: 10, 
+      title: 'Cluix Brand Identity & Design', 
+      subtitle: 'Water Intelligence & Branding System',
+      category: 'Branding', 
+      colSpan: 'lg:col-span-12', 
+      rowSpan: 'lg:row-span-2',
+      image: cuixBrandingImage
     },
   ];
 
@@ -146,8 +204,8 @@ export const ProjectsGrid = () => {
     <section id="projects" className="py-24 relative">
       <div className="container mx-auto px-6">
         <div className="flex flex-col xl:flex-row xl:items-end justify-between mb-16 gap-8">
-          <h2 className="text-3xl font-display font-bold text-foreground flex items-center gap-4 shrink-0">
-            <span className="w-12 h-[2px] bg-accent" />
+          <h2 className="text-2xl sm:text-3xl font-display font-bold text-foreground flex items-center gap-4 shrink-0">
+            <span className="w-12 h-[2px] bg-accent shadow-[0_0_10px_rgba(6,182,212,0.5)]" />
             03 // CASE STUDIES
           </h2>
           
@@ -156,10 +214,10 @@ export const ProjectsGrid = () => {
               <button
                 key={category}
                 onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
+                className={`px-4 py-2 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 ${
                   activeCategory === category
-                    ? 'bg-foreground text-background shadow-md'
-                    : 'bg-muted/50 hover:bg-muted text-foreground/70 hover:text-foreground border border-border'
+                    ? 'bg-accent text-background shadow-[0_0_15px_rgba(6,182,212,0.3)] font-semibold border-transparent'
+                    : 'bg-white/[0.02] hover:bg-white/[0.06] text-neutral-400 hover:text-white border border-white/10'
                 }`}
               >
                 {category}
