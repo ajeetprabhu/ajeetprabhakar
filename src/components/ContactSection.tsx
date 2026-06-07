@@ -26,6 +26,13 @@ export const ContactSection = () => {
   const [projectType, setProjectType] = useState('');
   const [message, setMessage] = useState('');
   const [loading, setLoading] = useState(false);
+  const [selectedMeeting, setSelectedMeeting] = useState('30');
+
+  const bookingUrls: Record<string, string> = {
+    '15': 'https://calendar.google.com/', // Replace with your Google Appointment 15m slot link
+    '30': 'https://calendar.google.com/', // Replace with your Google Appointment 30m slot link
+    '45': 'https://calendar.google.com/', // Replace with your Google Appointment 45m slot link
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -134,7 +141,7 @@ export const ContactSection = () => {
               <div className="flex flex-wrap gap-3">
                 {/* LinkedIn */}
                 <a 
-                  href="https://linkedin.com/in/ajeetprabhakar" 
+                  href="https://www.linkedin.com/in/ajeet-prabhakar-79a4841b1/" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-11 h-11 rounded-lg bg-white/[0.02] border border-white/5 hover:border-accent hover:bg-accent/5 text-neutral-400 hover:text-white hover:shadow-glow transition-all duration-300 flex items-center justify-center"
@@ -143,7 +150,7 @@ export const ContactSection = () => {
                 </a>
                 {/* Dribbble */}
                 <a 
-                  href="https://dribbble.com/ajeetprabhakar" 
+                  href="https://dribbble.com/AjeetPrabhu" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-11 h-11 rounded-lg bg-white/[0.02] border border-white/5 hover:border-accent hover:bg-accent/5 text-neutral-400 hover:text-white hover:shadow-glow transition-all duration-300 flex items-center justify-center"
@@ -152,7 +159,7 @@ export const ContactSection = () => {
                 </a>
                 {/* Behance */}
                 <a 
-                  href="https://behance.net/ajeetprabhakar" 
+                  href="https://www.behance.net/CreatorDesigno" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="w-11 h-11 rounded-lg bg-white/[0.02] border border-white/5 hover:border-accent hover:bg-accent/5 text-neutral-400 hover:text-white hover:shadow-glow transition-all duration-300 flex items-center justify-center"
@@ -160,26 +167,6 @@ export const ContactSection = () => {
                   <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
                     <path d="M8.22 5.062c.969 0 1.769.219 2.406.656.637.438.956 1.094.956 1.969 0 .61-.153 1.118-.459 1.525-.306.407-.743.722-1.31.944.756.216 1.325.603 1.706 1.162.381.56.572 1.253.572 2.081 0 1.053-.369 1.869-1.106 2.45-.738.581-1.722.872-2.95.872H2v-11.66h6.22zm-.713 4.294c.328 0 .584-.078.769-.234.184-.156.277-.4.277-.731 0-.306-.092-.538-.277-.694-.184-.156-.442-.234-.775-.234H4.5v1.893h3.007zm.256 5.15c.341 0 .61-.091.806-.272.197-.181.295-.456.295-.825 0-.344-.097-.603-.29-.775-.194-.172-.464-.258-.81-.258H4.5v2.13h3.263zm14.237-1.156h-5.263c.069.591.294 1.047.675 1.369.381.322.884.483 1.509.483.475 0 .869-.097 1.181-.291.312-.194.55-.478.712-.853h2.006c-.225.753-.666 1.366-1.322 1.838-.656.472-1.503.708-2.541.708-1.538 0-2.731-.472-3.581-1.416-.85-.944-1.275-2.234-1.275-3.869 0-1.603.419-2.881 1.256-3.834.838-.953 1.991-1.43 3.456-1.43 1.438 0 2.569.456 3.394 1.369.825.912 1.228 2.222 1.209 3.928h.007zm-1.956-1.609c-.044-.509-.231-.912-.562-1.209-.331-.297-.781-.446-1.35-.446-.538 0-.978.147-1.322.441-.344.294-.559.7-.644 1.214h3.878zm-4.52-6.5h4.634v1.072H16.03V5.241z"/>
                   </svg>
-                </a>
-                {/* Medium */}
-                <a 
-                  href="https://medium.com/@ajeetprabhakar" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-lg bg-white/[0.02] border border-white/5 hover:border-accent hover:bg-accent/5 text-neutral-400 hover:text-white hover:shadow-glow transition-all duration-300 flex items-center justify-center"
-                >
-                  <svg className="w-4.5 h-4.5 fill-current" viewBox="0 0 24 24">
-                    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zm7.42 0c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42zM24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-                  </svg>
-                </a>
-                {/* GitHub */}
-                <a 
-                  href="https://github.com/ajeetprabhu" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-11 h-11 rounded-lg bg-white/[0.02] border border-white/5 hover:border-accent hover:bg-accent/5 text-neutral-400 hover:text-white hover:shadow-glow transition-all duration-300 flex items-center justify-center"
-                >
-                  <Github className="w-4.5 h-4.5" />
                 </a>
               </div>
             </div>
@@ -286,25 +273,70 @@ export const ContactSection = () => {
               </div>
             </div>
 
-            {/* Quick Chat Call CTA */}
-            <div className="bg-[#0a0a0c] border border-white/5 p-6 rounded-sm flex flex-col sm:flex-row items-center justify-between gap-6 hover:border-accent/20 transition-all duration-300 text-left">
-              <div className="flex items-center gap-4 w-full sm:w-auto">
-                <div className="w-14 h-14 rounded-full border border-accent/20 flex items-center justify-center bg-accent/5 shadow-[0_0_15px_rgba(6,182,212,0.1)] shrink-0 animate-pulse">
-                  <Calendar className="w-6 h-6 text-accent" />
+            {/* Book a Meeting Card */}
+            <div className="bg-[#0a0a0c] border border-white/5 p-6 sm:p-8 rounded-sm text-left hover:border-accent/20 transition-all duration-300">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center text-accent">
+                  <Calendar className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-white font-display font-bold text-base uppercase tracking-wider">Prefer a quick chat?</h4>
-                  <p className="text-neutral-400 text-xs sm:text-sm mt-1">Schedule a call with me and let's discuss your ideas in detail.</p>
+                  <h3 className="text-lg sm:text-xl font-display font-bold text-white uppercase tracking-wider select-none">Book a Meeting</h3>
+                  <p className="text-[10px] text-neutral-500 font-sans mt-0.5">Powered by Google Appointment Scheduler</p>
                 </div>
               </div>
+
+              {/* Booking Options */}
+              <div className="space-y-3 mb-6">
+                {[
+                  { id: '15', label: '15 min Introduction', desc: 'Brief sync & initial alignment check.' },
+                  { id: '30', label: '30 min Project Discussion', desc: 'Detailed review of scope and specs.' },
+                  { id: '45', label: '45 min Design Consultation', desc: 'In-depth UX/UI review & strategy session.' }
+                ].map((option) => (
+                  <div 
+                    key={option.id}
+                    onClick={() => setSelectedMeeting(option.id)}
+                    className={`group flex items-start gap-4 p-4 rounded-md border bg-white/[0.01] cursor-pointer transition-all duration-300 ${
+                      selectedMeeting === option.id 
+                        ? 'border-accent/50 bg-accent/[0.02] shadow-[0_0_15px_rgba(6,182,212,0.05)]' 
+                        : 'border-white/5 hover:border-white/10 hover:bg-white/[0.02]'
+                    }`}
+                  >
+                    {/* Radio indicator */}
+                    <div className="pt-0.5">
+                      <div className={`w-4 h-4 rounded-full border flex items-center justify-center transition-all ${
+                        selectedMeeting === option.id 
+                          ? 'border-accent' 
+                          : 'border-neutral-700 group-hover:border-neutral-500'
+                      }`}>
+                        {selectedMeeting === option.id && (
+                          <div className="w-2 h-2 rounded-full bg-accent" />
+                        )}
+                      </div>
+                    </div>
+                    {/* Labels */}
+                    <div className="space-y-0.5">
+                      <p className={`text-sm font-semibold transition-colors ${
+                        selectedMeeting === option.id ? 'text-accent' : 'text-white group-hover:text-neutral-200'
+                      }`}>
+                        {option.label}
+                      </p>
+                      <p className="text-xs text-neutral-500 font-sans">
+                        {option.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {/* Action Button */}
               <a 
-                href="https://calendly.com/ajeetprabhakar" 
+                href={bookingUrls[selectedMeeting]}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="border border-white/10 hover:border-accent hover:bg-accent/5 text-white font-display text-xs tracking-widest uppercase py-3.5 px-6 transition-all duration-300 flex items-center gap-3 backdrop-blur-md rounded-sm shrink-0 w-full sm:w-auto justify-center"
+                className="w-full h-12 bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-500 hover:scale-[1.01] hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] transition-all duration-300 text-white font-display text-xs font-bold uppercase tracking-widest flex items-center justify-center gap-2 rounded-sm shadow-md"
               >
-                <Calendar className="w-4 h-4 text-accent" />
-                <span>Schedule a Call</span>
+                <span>View Available Times</span>
+                <ArrowRight className="w-4 h-4" />
               </a>
             </div>
 
@@ -316,9 +348,9 @@ export const ContactSection = () => {
         <div className="container mx-auto mt-24 pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-xs text-foreground/40 font-display tracking-widest uppercase select-none">
           <p>© {new Date().getFullYear()} AJEET PRABHAKAR</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="https://linkedin.com/in/ajeetprabhakar" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">LINKEDIN</a>
-            <a href="https://behance.net/ajeetprabhakar" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">BEHANCE</a>
-            <a href="https://github.com/ajeetprabhu" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">GITHUB</a>
+            <a href="https://www.linkedin.com/in/ajeet-prabhakar-79a4841b1/" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">LINKEDIN</a>
+            <a href="https://www.behance.net/CreatorDesigno" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">BEHANCE</a>
+            <a href="https://dribbble.com/AjeetPrabhu" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">DRIBBBLE</a>
           </div>
         </div>
 
