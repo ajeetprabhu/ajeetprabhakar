@@ -6,6 +6,7 @@ import ddDashboardImage from '../assets/Projects/DD Dashboard.jpg';
 import cuixBrandingImage from '../assets/Projects/Cuix Branding.jpg';
 import superchargerImage from '../assets/Projects/3D Renders/DYNAMIC CHARGER.png';
 import telemetryImage from '../assets/Projects/3D Renders/computer.png';
+import wallUnitImage from '../assets/Projects/Wall Unit Design.jpg';
 import cluixVideo from '../assets/Projects/3D animation/cluix_video.mp4';
 import droneChargingVideo from '../assets/Projects/3D animation/Drone Charging at PGCIL.mp4';
 import dashWirelessVideo from '../assets/Projects/3D animation/Dash Dynamic Wireless Charging system.mp4';
@@ -106,6 +107,15 @@ const CaseStudy = () => {
       timeline: '4 Weeks',
       tools: ['Illustrator', 'Photoshop', 'Indesign'],
       imageUrl: cuixBrandingImage,
+    },
+    '11': {
+      title: 'Wireless EV Charger Wall Unit',
+      subtitle: 'A premium wall-mounted wireless charging system for electric vehicles',
+      description: 'A premium wall-mounted wireless charging system designed for residential and commercial electric vehicle charging. Combining high-efficiency power transfer, clean minimalist industrial design aesthetics, and a sleek user interface.',
+      role: 'Industrial & Product Designer',
+      timeline: '10 Weeks',
+      tools: ['SolidWorks', 'Blender', 'Keyshot', 'Illustrator'],
+      imageUrl: wallUnitImage,
     },
     default: {
       title: 'Project ' + id,

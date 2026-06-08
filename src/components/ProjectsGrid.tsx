@@ -6,6 +6,7 @@ import ddDashboardImage from '../assets/Projects/DD Dashboard.jpg';
 import cuixBrandingImage from '../assets/Projects/Cuix Branding.jpg';
 import superchargerImage from '../assets/Projects/3D Renders/DYNAMIC CHARGER.png';
 import telemetryImage from '../assets/Projects/3D Renders/computer.png';
+import wallUnitImage from '../assets/Projects/Wall Unit Design.jpg';
 import cluixVideo from '../assets/Projects/3D animation/cluix_video.mp4';
 import droneChargingVideo from '../assets/Projects/3D animation/Drone Charging at PGCIL.mp4';
 import dashWirelessVideo from '../assets/Projects/3D animation/Dash Dynamic Wireless Charging system.mp4';
@@ -18,7 +19,7 @@ const CATEGORIES = [
   'UI&UX',
   '3D Animation',
   'Motion Graphics',
-  'Product Design'
+  'Product design and Industrial Design'
 ];
 
 interface Project {
@@ -117,7 +118,7 @@ export const ProjectsGrid = () => {
       id: 2, 
       title: 'Supercharger Hub UX', 
       subtitle: 'Next-Gen EV Charging Experience',
-      category: 'Product Design', 
+      category: 'Product design and Industrial Design', 
       colSpan: 'lg:col-span-4', 
       rowSpan: 'lg:row-span-1',
       image: superchargerImage
@@ -193,6 +194,15 @@ export const ProjectsGrid = () => {
       colSpan: 'lg:col-span-12', 
       rowSpan: 'lg:row-span-2',
       image: cuixBrandingImage
+    },
+    { 
+      id: 11, 
+      title: 'Wireless EV Charger Wall Unit', 
+      subtitle: 'A premium wall-mounted wireless charging system for electric vehicles',
+      category: 'Product design and Industrial Design', 
+      colSpan: 'lg:col-span-12', 
+      rowSpan: 'lg:row-span-2',
+      image: wallUnitImage
     },
   ];
 
