@@ -62,7 +62,7 @@ export default {
       },
       fontFamily: {
         sans: ["Inter", "sans-serif"],
-        display: ["Orbitron", "sans-serif"],
+        display: ["Inter Tight", "Inter", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
