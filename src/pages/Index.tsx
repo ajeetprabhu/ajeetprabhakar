@@ -1,6 +1,7 @@
 import { HeroSection } from "@/components/HeroSection";
 import { SkillsDashboard } from "@/components/SkillsDashboard";
 import { ProjectsGrid } from "@/components/ProjectsGrid";
+import { DesignLab } from "@/components/DesignLab";
 import { ContactSection } from "@/components/ContactSection";
 
 const Index = () => {
@@ -9,6 +10,7 @@ const Index = () => {
       <HeroSection />
       <SkillsDashboard />
       <ProjectsGrid />
+      <DesignLab />
       <ContactSection />
     </div>
   );
