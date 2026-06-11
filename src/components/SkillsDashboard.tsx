@@ -294,16 +294,8 @@ export const SkillsDashboard = () => {
                 <div className="absolute inset-0 rounded-full border border-dashed border-cyan-500/10 animate-[spin_60s_linear_infinite] pointer-events-none" />
                 <div className="absolute inset-2 rounded-full border border-indigo-500/5 animate-[spin_40s_linear_infinite_reverse] pointer-events-none" />
                 
-                {/* Modern AP Monogram */}
-                <svg viewBox="0 0 100 100" className="w-[42px] h-[42px] text-white fill-none stroke-current mb-2" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M 25 70 L 50 30 L 75 70" />
-                  <path d="M 50 30 L 50 75" />
-                  <path d="M 50 30 C 68 30 68 50 50 50" />
-                </svg>
-                
                 <span className="text-[11px] font-display font-black text-white tracking-[0.18em] uppercase">Ajeet Prabhakar</span>
-                <span className="text-[7.5px] font-sans text-neutral-400 tracking-[0.25em] uppercase mt-0.5">PRODUCT DESIGNER</span>
-                <span className="font-['Caveat'] text-2xl text-cyan-400 select-none mt-2 transform -rotate-6">Ajeet</span>
+                <span className="text-[7.5px] font-sans text-neutral-400 tracking-[0.25em] uppercase mt-1">PRODUCT DESIGNER</span>
               </div>
 
               {/* 8 surrounding skill cards */}
@@ -377,14 +369,8 @@ export const SkillsDashboard = () => {
               <div className="w-full flex justify-center py-4">
                 <div className="w-[160px] h-[160px] rounded-full bg-slate-950 border border-white/10 flex flex-col items-center justify-center text-center shadow-[0_0_40px_rgba(34,211,238,0.08)] relative">
                   <div className="absolute inset-0 rounded-full border border-dashed border-cyan-500/10 animate-[spin_50s_linear_infinite]" />
-                  <svg viewBox="0 0 100 100" className="w-[36px] h-[36px] text-white fill-none stroke-white mb-2" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M 25 70 L 50 30 L 75 70" />
-                    <path d="M 50 30 L 50 75" />
-                    <path d="M 50 30 C 68 30 68 50 50 50" />
-                  </svg>
                   <span className="text-[10px] font-display font-bold text-white tracking-[0.15em] uppercase">Ajeet Prabhakar</span>
-                  <span className="text-[7.5px] font-sans text-neutral-400 tracking-[0.25em] uppercase mt-0.5">PRODUCT DESIGNER</span>
-                  <span className="font-['Caveat'] text-xl text-cyan-400 select-none mt-1 transform -rotate-6">Ajeet</span>
+                  <span className="text-[7.5px] font-sans text-neutral-400 tracking-[0.25em] uppercase mt-1">PRODUCT DESIGNER</span>
                 </div>
               </div>
 
